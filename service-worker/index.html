@@ -13,5 +13,16 @@
            console.log(registration)
        },err=>console.error(err))
    </script>
+   <script>
+       //不允许在serviceWorker页面中直接弹出
+       //如果要在serviceWorker弹出 需要使用self.registration.Notification("我是标题",{body:"hhhhha"})
+       //消息推送
+       console.log(Notification.permission)//默认返回default  //禁止 denied 允许 granted
+       //调用
+       Notification.requestPermission().then(permission=>{
+           console.log(permission)
+           new Notification("我是标题",{body:"hhhhha"})//展示一个通知
+        })
+   </script>
 </body>
 </html>

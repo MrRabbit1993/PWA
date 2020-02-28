@@ -15,7 +15,7 @@ self.addEventListener("activate", event => {  //新的work被启用的时候，�
                 return cache.delete(cachename)
             }
         }))
-    }))//这里Clients表是所有控制的页面
+    }))
 })
 self.addEventListener("fetch", event => { // 捕获到资源的时候，可以发生无数次
     console.log("fetch", event)
